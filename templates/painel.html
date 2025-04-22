@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Painel Biblioteca</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <h1>Painel da Biblioteca</h1>
+
+  <div class="botoes">
+    <button onclick="mostrarFormulario('cadastro')">Cadastrar Livro</button>
+    <button onclick="mostrarFormulario('atualizar')">Atualizar Estoque</button>
+    <button onclick="mostrarFormulario('emprestimo')">Empréstimo</button>
+    <button onclick="mostrarFormulario('devolucao')">Devolução</button>
+  </div>
+
+  <div id="formularioCadastro" class="formulario">
+    <h2>Cadastrar Livro</h2>
+    <form id="formCadastrarLivro">
+      <input type="text" id="titulo" placeholder="Título" required />
+      <input type="text" id="autor" placeholder="Autor" required />
+      <input type="text" id="isbn" placeholder="ISBN" required />
+      <input type="number" id="quantidade" placeholder="Quantidade" required />
+      <input type="text" id="localizacao" placeholder="Localização" required />
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <div id="formularioAtualizar" class="formulario" style="display: none;">
+    <h2>Atualizar Quantidade</h2>
+    <form id="formAtualizarLivro">
+      <input type="text" id="isbnAtualizar" placeholder="ISBN" required />
+      <input type="number" id="quantidadeAtualizar" placeholder="Nova quantidade" required />
+      <input type="text" id="localizacao" placeholder="Localização" />
+      <button type="submit">Atualizar</button>
+    </form>
+  </div>
+
+  <div id="formularioEmprestimo" class="formulario" style="display: none;">
+    <h2>Realizar Empréstimo</h2>
+    <form id="formEmprestimoLivro">
+      <input type="number" id="livro_id" placeholder="ID do Livro" required />
+
+      <label for="usuario_id">Usuário:</label>
+      <select id="usuario_id" name="usuario_id" required>
+        <!-- A combobox será preenchida aqui pelo JS -->
+      </select>
+
+      <button type="submit">Emprestar</button>
+    </form>
+  </div>
+
+  <div id="aba-devolucao" style="display: none;">
+    <h3>Empréstimos Ativos</h3>
+    <div id="lista-emprestimos"></div>
+</div>
+
+  <div id="formularioDevolucao" class="formulario" style="display: none;">
+    <h2>Realizar Devolução</h2>
+    <form id="formDevolucaoLivro">
+      <input type="number" id="livro_id" placeholder="ID do Livro" required />
+      <label for="usuario_id">Usuário:</label>
+      <select id="usuario_id" name="usuario_id" required>
+        <!-- A combobox será preenchida aqui pelo JS -->
+      </select>
+      <button type="submit">Devolver</button>
+    </form>
+  </div>
+
+  <div id="containerLivros">
+    <h2>Livros Cadastrados</h2>
+    <table id="tabelaLivros">
+      <thead>
+        <tr>
+          <th>Identificador</th>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>ISBN</th>
+          <th>Quantidade</th>
+          <th>Disponível</th>
+          <th>Localização</th>
+          <th>Data Cadastro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Linhas serão inseridas via JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/static/js/painel.js"></script>
+
+</body>
+</html>

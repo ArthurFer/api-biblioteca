@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <img src="/static/img/Logo Biblioteca digital.png" alt="Logo Biblioteca Digital" class="logo">
+    </header>
+
+    <div class="container_formulario">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem-Vindo!</h2>
+                <p class="description description-primary">Para manter-se conectado</p>
+                <p class="description description-primary">Por favor, insira seus dados pessoais ou faça login.</p>
+            </div>
+
+            <div class="second-column">
+                <!-- Aba de Cadastro -->
+                <h2 class="title title-second">Criar Conta</h2>
+                <form class="form" id="signupForm">
+                    <label class="label-input">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="username" placeholder="Nome" required>
+                    </label>
+
+                    <label class="label-input">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="email" placeholder="Email" required>
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="password" placeholder="Senha" required>
+                    </label>
+
+                    <button class="btn btn-second" type="submit">Cadastro</button>
+                </form>
+
+                <!-- Aba de Login -->
+                <h2 class="title title-second">Já tem uma conta? Faça login</h2>
+                <form class="form" id="loginForm">
+                    <label class="label-input">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="loginEmail" placeholder="Email" required>
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="loginPassword" placeholder="Senha" required>
+                    </label>
+
+                    <button class="btn btn-second" type="submit">Login</button>
+                </form>
+
+                <!-- Mensagens de erro e sucesso -->
+                <p class="error-message" style="color: red; display: none;"></p>
+                <p class="success-message" style="color: green; display: none;"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/login.js"></script>
+</body>
+</html>
